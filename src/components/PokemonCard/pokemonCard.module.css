@@ -1,0 +1,12 @@
+.pokemonCard {
+   flex-basis: 15%;
+   margin-bottom: 10px;
+   border: 2px solid grey;
+   padding: 1px;
+   box-sizing: border-box;
+   min-height: 150px;
+}
+
+.pokemonCard img {
+    width: 100%;
+}
