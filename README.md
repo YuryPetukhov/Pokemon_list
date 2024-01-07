@@ -14,7 +14,7 @@ You will also see any lint errors in the console.
 
 ## Description
 
-Welcome to PokémonInfo Companion - your indispensable companion for everything related to the Pokémon world! This educational application was created solely to refine development skills. The app provides information about Pokémon using advanced technologies such as HOC (Higher Order Components) patterns and custom hooks.
+Welcome to PokémonInfo - your indispensable companion for everything related to the Pokémon world! This educational application was created solely to refine development skills. The app provides information about Pokémon using advanced React technologies such as HOC (Higher Order Components) patterns and custom hooks.
 
 ## Key Features
 
@@ -28,7 +28,7 @@ Welcome to PokémonInfo Companion - your indispensable companion for everything 
 
 The application includes the following technological aspects:
 
-- **HOC (Higher Order Components): ** Used for the reusability of logic and components.
+- **HOC** (Higher Order Components): Used for the reusability of logic and components.
 - **Custom Hooks:** Created customizable hooks for efficient state management in the application.
 - **Data Service:** Implemented a service for data management, ensuring effective transmission and processing of Pokémon information.
 - **ErrorBoundary:** Implemented a ErrorBoundary for catch Application error
