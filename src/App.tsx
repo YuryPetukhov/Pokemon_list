@@ -1,9 +1,12 @@
-import React from 'react';
-import ListOfPokemonts from './components/ListOfPokemonts';
+import { ErrorBoundary } from 'react-error-boundary';
+import ListOfPokemons from './components/ListOfPokemonts';
+
 function App() {
   return (
     <div className="App">
-      <ListOfPokemonts />
+      <ErrorBoundary fallback={<div>Global error in Application</div>}>
+        <ListOfPokemons />
+      </ErrorBoundary>
     </div>
   );
 }

@@ -1,3 +1,3 @@
-import {ListOfPokemonts} from './ListOfPokemonts'
+import { PokemonsList } from './PokemonsList';
 
-export default ListOfPokemonts;
+export default PokemonsList;

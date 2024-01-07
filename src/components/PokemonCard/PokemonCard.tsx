@@ -1,45 +1,25 @@
-import React, {FunctionComponent} from 'react';
 import { Card } from 'antd';
+import { service } from '../utils/getData';
+import { withPokemonModal } from '../../HOC/withPokemonModal';
+import { IPokemon } from '../../interfaces/pokemons';
 import style from './pokemonCard.module.css';
-import service from '../utils/getData';
-import Modal from '../Modal'; 
-import useModal from '../../hooks/modalHook';
 
 const { Meta } = Card;
-interface IPokemons {
-  name: string,
-  id: number
-}
-export const PokemonCard: FunctionComponent<IPokemons> = ({name, id}) => {
-  const {isShowing, toggle, content, setContent } = useModal();
-   
 
-  const img = (
-  <img 
-     alt={name} 
-     src={service.createImgPokemon(id)}
-  />
-  )
+const PokemonCardComponent = ({ name, id, ...props }: IPokemon) => {
+  const img = <img alt={name} src={service.createImgPokemon(id)} />;
+
   return (
     <>
-    <Card
-    hoverable
-    cover={img} 
-    className={style.pokemonCard}
-    onClick={async () => {
-      const data = await service.getInfoOfPokemon(id)
-      setContent(data);
-      toggle()
-    }}
-  >
-      <Meta title={name} description="What is the Pokemon" />
-    </Card>
-    <Modal
-        isShowing={isShowing}
-        hide={toggle}
-        content = {content}
-      />
+      <Card {...props} cover={img} className={style.pokemonCard}>
+        <Meta title={name} />
+      </Card>
     </>
-  )
-}
- 
+  );
+};
+
+PokemonCardComponent.displayName = 'PokemonCard';
+
+const PokemonCard = withPokemonModal(PokemonCardComponent);
+
+export { PokemonCard };
